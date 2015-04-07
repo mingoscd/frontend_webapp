@@ -1,0 +1,34 @@
+$font-color: #C3C6CE;
+$body-color: #596177;
+$metricbox-color: #61697E;
+$shadow-color: #565E73;
+$hover-metric-color: #6e758a;
+$btn-bg: #4B5265;
+$hover-btn-color: #FF0090;
+$text-btn-color: white;
+$text-metric-color: white;
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+body{
+	background-color: $body-color;
+	color: $font-color;
+	font-family: Arial;
+}
+.content{
+	margin: 25vh auto auto;
+	min-width: 630px;
+	width: 30%;
+	position: relative;
+	.name-account{
+		display: inline-block;
+		font-weight: 100;
+		margin-top: 5px;
+	}
+}

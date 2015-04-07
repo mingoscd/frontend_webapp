@@ -1,0 +1,94 @@
+.metric-table{
+	display: -webkit-flexbox;
+	display: -ms-flexbox;
+	display: flex;
+	@include vendor-prefix(flex-direction, row);
+	@include vendor-prefix(flex-wrap, wrap);
+	@include vendor-prefix(justify-content, flex-start);
+	-ms-flex-pack: start;
+	@include vendor-prefix(align-items, flex-start);
+	-ms-flex-align: start;
+}
+
+.metric{
+	@include vendor-prefix(border-radius, 3px);
+	@include vendor-prefix(box-shadow, 3px 3px 1px $shadow-color);
+	background-color: $metricbox-color;
+	box-sizing: border-box;
+	cursor: pointer;
+	margin-bottom: 10px;
+	margin-right: 1.5%;
+	padding: 10px 15px;
+	position: relative;
+	width: 31.5%;
+	.metric-title{
+		display: inline-block;
+		font-weight: 400;
+		margin: 0;
+	}
+	.details{
+		font-size: 14px;
+		margin-top: 15px;
+		visibility: hidden;
+		span{
+			display: block;
+		}
+	}
+	.editable-name{
+		visibility: hidden;
+	}
+	&:hover{
+		background-color: $hover-metric-color;
+		.details{
+			visibility: visible;
+		}
+	}
+}
+
+.new-metric{
+	@include vendor-prefix(box-shadow, none);
+	background-color: $shadow-color !important;
+	border: 1px dashed $font-color;
+	padding: 25px 15px;
+	span.fa{
+		vertical-align: super;
+		padding-left: 5px;
+	}
+	p{
+		text-transform: uppercase;
+		display: inline-block;
+		width: 120px;
+		margin: 0 10px;
+	}
+}
+
+.edit-metric{
+	.editable-name{
+		visibility: hidden;
+		color: $text-metric-color;
+		margin-left: 10px;
+	}
+	&:hover{
+		background-color: $metricbox-color;
+		cursor: default;
+		.details{
+			visibility: hidden;
+		}
+	}
+	.metric-title:hover, a:hover{
+		cursor: pointer;
+		color: $text-metric-color;
+	}
+	.metric-title:hover + .editable-name{
+		visibility: visible;
+	}
+}
+
+.input-metric-title{
+	background: none;
+	border: 0;
+	outline: none;
+	cursor: text;
+	color: $text-metric-color;
+	font-size: 18px;
+}
